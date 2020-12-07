@@ -342,10 +342,24 @@
         = FUNCTION FORM SORTING GALLERY
     -------------------------------------------*/
   function sortingGallery() {
+    if (typeof window.InstagramFeed === "function") {
+      new window.InstagramFeed({
+        username: "motianinikhil",
+        container: document.getElementById("insta-feed"),
+        display_profile: true,
+        display_gallery: true,
+        display_captions: true,
+        items: 100,
+        items_per_row: 5,
+        margin: 0.5,
+        lazy: true
+      });
+      $("#insta-feed").hide();
+    }
     if ($(".sortable-gallery .gallery-filters").length) {
       var $container = $(".gallery-container");
       $container.isotope({
-        filter: "*",
+        filter: "*:not(.instagram-feed)",
         animationOptions: {
           duration: 750,
           easing: "linear",
@@ -357,6 +371,11 @@
         $(".gallery-filters li .current").removeClass("current");
         $(this).addClass("current");
         var selector = $(this).attr("data-filter");
+        if (/insta/gi.test(selector)) {
+          $("#insta-feed").show();
+        } else {
+          $("#insta-feed").hide();
+        }
         $container.isotope({
           filter: selector,
           animationOptions: {
@@ -624,6 +643,7 @@
     );
 
     smoothScrolling($(".site-header .navigation").innerHeight());
+
   });
 
   /*==========================================================================

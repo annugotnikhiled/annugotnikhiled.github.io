@@ -228,30 +228,6 @@
           <div class="col col-xs-12">
             <div class="story-timeline">
               <div class="row">
-                <div class="col col-md-6">
-                  <div class="story-text right-align-text">
-                    <h3>Sham-e-Sangeet</h3>
-                    <span class="date">Dec 8 2020, 6 PM</span>
-                    <p>
-                      We invite you to join us at Sangeet ceremony of our
-                      daughter's wedding. The event will be full of dance,
-                      music & joy followed by dinner.
-                    </p>
-                    <br />
-                    <snap>Venue: </snap>
-                    <p>Rajasthan Resort, Pushkar</p>
-                    <div class="btn btn-2">
-                      <a class="popup-gmaps" href="https://g.page/rajasthan-resort-pushkar" target="_blank">Location</a>
-                    </div>
-                  </div>
-                </div>
-                <div class="col col-md-6">
-                  <div class="img-holder">
-                    <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
-                  </div>
-                </div>
-              </div>
-              <div class="row">
                 <div class="col col-md-6 text-holder right-heart">
                   <span class="heart">
                     <i class="fa fa-thumbs-up" aria-hidden="true"></i>
@@ -262,7 +238,7 @@
                     <p>
                       Your presence will be our great pleasure at behrana
                       sahib of Jhulelal Ji. Join us and enjoy some sindhi
-                      style dance & music. Lunch to be followed.
+                      style dance & music. Dinner to be followed.
                     </p>
                     <br />
                     <snap>Venue: </snap>
@@ -487,7 +463,7 @@
                   </div>
                   <div class="groomsmen-bridesmaid-content">
                     <h3>Aditi Ramnani</h3>
-                    <span>Bride's Sister & <strong>Maid or honor</strong></span>
+                    <span>Bride's Sister & <strong>Maid of honor</strong></span>
                   </div>
                 </div>
               </div>
@@ -594,13 +570,15 @@
           <div class="col col-xs-12 sortable-gallery">
             <div class="gallery-filters">
               <ul>
-                <li><a data-filter="*" href="#" class="current">All</a></li>
-                <li><a data-filter=".EnagagEment" href="#">Engagement</a></li>
-                <li><a data-filter=".Pre-Wedding" href="#">Instagram feed</a></li>
+                <li><a data-filter="*:not(.instagram-feed)" href="#" class="current">All</a></li>
+                <li><a data-filter=".engagement" href="#">Engagement</a></li>
+                <li><a data-filter=".pre-wedding" href="#">Pre-wedding</a></li>
+                <li><a data-filter=".roka" href="#">Roka</a></li>
+                <li><a data-filter=".instagram-feed" href="#">Instagram</a></li>
               </ul>
             </div>
             <div class="gallery-container gallery-fancybox masonry-gallery">
-              <div class="grid EnagagEment">
+              <div class="grid engagement">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -608,7 +586,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid EnagagEment">
+              <div class="grid engagement">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -616,7 +594,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid EnagagEment">
+              <div class="grid engagement">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -624,7 +602,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid Pre-Wedding">
+              <div class="grid pre-wedding">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -632,7 +610,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid Pre-Wedding">
+              <div class="grid pre-wedding">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -640,7 +618,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid Pre-Wedding">
+              <div class="grid pre-wedding">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -648,7 +626,7 @@
                   </div>
                 </a>
               </div>
-              <div class="grid Pre-Wedding">
+              <div class="grid pre-wedding">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
@@ -656,13 +634,17 @@
                   </div>
                 </a>
               </div>
-              <div class="grid Pre-Wedding">
+              <div class="grid pre-wedding">
                 <a href="https://via.placeholder.com/150" class="fancybox" data-fancybox-group="gall-1">
                   <img src="https://via.placeholder.com/150" alt class="img img-responsive" />
                   <div class="icon">
                     <i class="ti-plus"></i>
                   </div>
                 </a>
+              </div>
+              <div class="instagram-feed">
+                <div id="insta-feed">
+                </div>
               </div>
             </div>
           </div>
@@ -780,6 +762,7 @@
   <script src="assets/js/jquery-plugin-collection.js"></script>
   <script src="assets/js/swiper.min.js"></script>
   <script src="assets/js/spirit.js"></script>
+  <script src="assets/js/instagram-feed.min.js"></script>
   <!-- Custom script for this template -->
   <script src="assets/js/script.js"></script>
 </body>
