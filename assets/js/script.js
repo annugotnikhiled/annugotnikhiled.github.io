@@ -106,6 +106,9 @@
     var links = $scrollLinks;
     var topGap = $topOffset;
 
+    if (!links) {
+      return
+    }
     links.on("click", function () {
       if (
         location.pathname.replace(/^\//, "") ===
@@ -342,20 +345,27 @@
         = FUNCTION FORM SORTING GALLERY
     -------------------------------------------*/
   function sortingGallery() {
-    if (typeof window.InstagramFeed === "function") {
-      new window.InstagramFeed({
-        username: "motianinikhil",
-        container: document.getElementById("insta-feed"),
-        display_profile: true,
-        display_gallery: true,
-        display_captions: true,
-        items: 100,
-        items_per_row: 5,
-        margin: 0.5,
-        lazy: true
-      });
-      $("#insta-feed").hide();
-    }
+    // if (typeof window.Instafeed === "function"){
+    //   // feed = new Instafeed({
+    //   //   accessToken: 'IGQVJWbElOeEdObXpsbkt0b1R3eDh0LVBmSTVMb1gtaUZAERFVQRG55emZAWR0xZAUEowZAUlfZAFptNkFBWC1EWkswR09jcE9JX2dGY29vZAjFnZAVYzZAk1yOUFEbDZA1c2dqbHJKZAXVpMmZApSnlpbVhLdkpuNwZDZD',
+    //   //   target: 'insta-feed',
+    //   // })
+    //   // feed.run()
+    // } else if (typeof window.InstagramFeed === "function") {
+    // new window.InstagramFeed({
+    //   tag: "annugotnikhiled",
+    //   container: document.getElementById("insta-feed"),
+    //   display_profile: true,
+    //   display_gallery: true,
+    //   display_captions: true,
+    //   items: 100,
+    //   items_per_row: 5,
+    //   margin: 0.5,
+    //   lazy: true
+    // });
+
+    // $("#insta-feed").hide();
+    // }
     if ($(".sortable-gallery .gallery-filters").length) {
       var $container = $(".gallery-container");
       $container.isotope({
@@ -371,11 +381,11 @@
         $(".gallery-filters li .current").removeClass("current");
         $(this).addClass("current");
         var selector = $(this).attr("data-filter");
-        if (/insta/gi.test(selector)) {
-          $("#insta-feed").show();
-        } else {
-          $("#insta-feed").hide();
-        }
+        // if (/insta/gi.test(selector)) {
+        //   $("#insta-feed").show();
+        // } else {
+        //   // $("#insta-feed").hide();
+        // }
         $container.isotope({
           filter: selector,
           animationOptions: {
@@ -633,6 +643,12 @@
 
     sortingGallery();
 
+    (function(){
+      var i, e, d = document, s = "script";i = d.createElement("script");i.async = 1;
+      i.src = "https://cdn.curator.io/published/0d0f2e42-34ff-44e8-afa9-0c122765050a.js";
+      e = d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
+      })();
+      
     toggleMobileNavigation();
 
     smallNavFunctionality();
@@ -643,7 +659,6 @@
     );
 
     smoothScrolling($(".site-header .navigation").innerHeight());
-
   });
 
   /*==========================================================================
