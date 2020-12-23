@@ -2811,6 +2811,12 @@ animation: spineer 2s infinite;
   .gallery-section{
     padding-bottom: 100px;
   }
+  .instagram-feed {
+    width: 100% !important;
+    height: 100% !important;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
 
 @media (max-width: 991px) {
   .gallery-section {
